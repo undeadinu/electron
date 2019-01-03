@@ -435,6 +435,7 @@ steps-checkout: &steps-checkout
     - *step-checkout-electron
     - *step-depot-tools-get
     - *step-depot-tools-add-to-path
+    - *step-install-nodejs-on-mac
     - *step-install-gnutar-on-mac
 
     - restore_cache:
