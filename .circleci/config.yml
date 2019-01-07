@@ -167,14 +167,9 @@ step-install-nodejs-on-mac: &step-install-nodejs-on-mac
     name: Install Node.js 10 on MacOS
     command: |
       if [ "`uname`" == "Darwin" ]; then
-        echo 'Tar before install'
-        tar --help
         brew update
         brew install node@10
         echo 'export PATH="/usr/local/opt/node@10/bin:$PATH"' >> $BASH_ENV
-        export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-        echo 'Tar after install'
-        tar --help
       fi
 
 step-install-gnutar-on-mac: &step-install-gnutar-on-mac
@@ -182,10 +177,15 @@ step-install-gnutar-on-mac: &step-install-gnutar-on-mac
     name: Install gnu-tar on macos
     command: |
       if [ "`uname`" == "Darwin" ]; then
+        echo 'Tar before install'
+        tar --help
         brew update
         brew install gnu-tar
         ln -s /usr/local/bin/gtar /usr/local/bin/gnutar
         echo 'export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"' >> $BASH_ENV
+        export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+        echo 'Tar after install'
+        tar --help
       fi
 
 step-gn-gen-default: &step-gn-gen-default
