@@ -30,6 +30,9 @@ effect on macOS.
 
 **Note:** This API has to be called after the `ready` event of `app` module.
 
+**Note:** Default menu is created automatically if the app does not set one.
+You can also set `process.noDefaultMenu` to `true` to disable this behavior.
+
 #### `Menu.getApplicationMenu()`
 
 Returns `Menu | null` - The application menu, if set, or `null`, if not set.
