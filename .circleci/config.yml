@@ -181,9 +181,7 @@ step-install-gnutar-on-mac: &step-install-gnutar-on-mac
         tar --help
         brew update
         brew install gnu-tar
-        ln -s /usr/local/bin/gtar /usr/local/bin/gnutar
-        echo 'export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"' >> $BASH_ENV
-        export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+        ln -fs /usr/local/bin/gtar /usr/local/bin/tar
         echo 'Tar after install'
         tar --help
       fi
