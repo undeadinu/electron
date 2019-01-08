@@ -81,15 +81,6 @@
       inspectable_web_contents->GetDevToolsWebContents();
   auto devToolsView = devToolsWebContents->GetNativeView();
 
-  // FIXME: SetAllowOtherViews is removed in
-  // https://chromium-review.googlesource.com/c/chromium/src/+/1251323/
-  /*if (visible && devtools_docked_) {
-    webContents->SetAllowOtherViews(true);
-    devToolsWebContents->SetAllowOtherViews(true);
-  } else if (!inspectable_web_contents->IsGuest()) {
-    webContents->SetAllowOtherViews(false);
-  }*/
-
   devtools_visible_ = visible;
   if (devtools_docked_) {
     if (visible) {
