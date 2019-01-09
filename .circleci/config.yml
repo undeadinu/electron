@@ -181,6 +181,7 @@ step-install-gnutar-on-mac: &step-install-gnutar-on-mac
     name: Install gnu-tar on macos
     command: |
       if [ "`uname`" == "Darwin" ]; then
+        brew update
         brew install gnu-tar
         ln -fs /usr/local/bin/gtar /usr/local/bin/tar
       fi
